@@ -35,9 +35,9 @@ var resourceNotFound string
 
 func ServeFileEmbed(writer http.ResponseWriter, request *http.Request) {
 	if request.URL.Query().Get("name") != "" {
-		fmt.Fprintf(writer, resourceOk)
+		fmt.Fprint(writer, resourceOk)
 	} else {
-		fmt.Fprintf(writer, resourceNotFound)
+		fmt.Fprint(writer, resourceNotFound)
 	}
 }
 func TestServerFileEmbed(t *testing.T) {
